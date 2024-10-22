@@ -9,7 +9,7 @@ function Meals() {
     data: fetchedMeals,
     isLoading,
     error
-  } = useHttp('https://order-hywq7enlp-nene-devs-projects.vercel.app/meals', requestConfig , [])
+  } = useHttp('/api/meals', requestConfig , [])
 
 
   if (isLoading) {

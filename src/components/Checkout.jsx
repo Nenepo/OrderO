@@ -6,7 +6,7 @@ import { currencyFormatter } from '../util/formatting';
 import Input from './UI/Input';
 import Button from './UI/Button';
 import useHttp from '../hooks/useHttp';
-
+import Error from './Error';
 const requestConfig = {
   method: 'POST',
   headers: {
@@ -64,6 +64,7 @@ function Checkout() {
           <Input label="Postal Code" type="text" id="postal-code" />
           <Input label="City" type="text" id="city" />
         </div>
+        {error && <Error title="failed to submit order" message={error}/>}
         <p className="modal-actions">
           {actions}
         </p>

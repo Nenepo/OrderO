@@ -26,6 +26,10 @@ function Checkout() {
     userProgressCtx.hideCheckout()
   }
 
+  const handleFinish = () => {
+    userProgressCtx.hideCheckout();
+    cartCtx.clearCart();
+  }
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -51,6 +55,18 @@ function Checkout() {
   if (isSending) {
     actions = <span>Sending order...</span>
   }
+
+  if (data && !error) {
+    return <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
+      <h2>Success!</h2>
+      <p>Your order is being processed</p>
+      <p>We will get back to you shortly</p>
+      <p className='modal-actions'>
+        <Button onClick={handleClose}>Okay</Button>
+
+      </p>
+    </Modal>
+  }
   return (
     <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
 
@@ -64,7 +80,7 @@ function Checkout() {
           <Input label="Postal Code" type="text" id="postal-code" />
           <Input label="City" type="text" id="city" />
         </div>
-        {error && <Error title="failed to submit order" message={error}/>}
+        {error && <Error title="failed to submit order" message={error} />}
         <p className="modal-actions">
           {actions}
         </p>

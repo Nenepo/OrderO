@@ -21,7 +21,7 @@ function Header() {
 
       <div id="title">
         <img src="/logo.jpg" alt="armani's logo" />
-        <h1>OrderO</h1>
+        <h1>Order-O</h1>
       </div>
       <nav>
       <Button className="text-button" textOnly={true} onClick={handleShowCart}>Cart {totalCartItems}</Button>

@@ -18,7 +18,7 @@ function Checkout() {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
 
-  const { data, isLoading: isSending, error, sendRequest, clearData } = useHttp('http://localhost:3000/orders', requestConfig,)
+  const { data, isLoading: isSending, error, sendRequest, clearData } = useHttp('https://order-hywq7enlp-nene-devs-projects.vercel.app/orders', requestConfig,)
 
   const cartTotal = cartCtx.items.reduce((totalPrice, item) => totalPrice + item.quantity * item.price, 0);
 

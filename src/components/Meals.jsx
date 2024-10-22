@@ -10,7 +10,7 @@ function Meals() {
     isLoading,
     error
   } = useHttp('/api/meals', requestConfig , [])
-
+// created an api folder so   Vercel will automatically detect the API routes inside the api folder and handle the requests for you.
 
   if (isLoading) {
     return <p className="center">Fetching Meals...</p>

@@ -9,10 +9,10 @@ export default async function handler(req, res) {
 
     const newOrder = { ...orderData, id: (Math.random() * 1000).toString() };
     try {
-      const orders = await fs.readFile('../data/orders.json', 'utf8');
+      const orders = await fs.readFile('../../data/orders.json', 'utf8');
       const allOrders = JSON.parse(orders);
       allOrders.push(newOrder);
-      await fs.writeFile('../data/orders.json', JSON.stringify(allOrders));
+      await fs.writeFile('../../data/orders.json', JSON.stringify(allOrders));
       res.status(201).json({ message: 'Order created!' });
     } catch (error) {
       res.status(500).json({ message: 'Failed to process the order' });

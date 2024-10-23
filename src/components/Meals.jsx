@@ -2,7 +2,12 @@ import useHttp from "../hooks/useHttp";
 import Error from "./Error";
 import MealItem from "./MealItem";
 
-const requestConfig = {}
+const requestConfig = {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
 function Meals() {
 // checking the network tab is essential when using api's so you  can see what might be happening 
   const {

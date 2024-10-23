@@ -13,6 +13,7 @@ export default async function handler(req, res) {
 
   // Handle GET request for meals
   if (req.method === 'GET') {
+    res.status(200).json([{ id: '1', name: 'Meal 1' }, { id: '2', name: 'Meal 2' }]);
     try {
       // Ensure the path is correct
       const meals = await fs.readFile('../data/available-meals.json', 'utf8'); // Adjust path as necessary

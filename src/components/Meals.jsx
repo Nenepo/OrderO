@@ -14,7 +14,7 @@ function Meals() {
     data: fetchedMeals,
     isLoading,
     error
-  } = useHttp('https://order-o-lake.vercel.app/api/meals', requestConfig , [])
+  } = useHttp('/api/meals', requestConfig , [])
 // created an api folder so   Vercel will automatically detect the API routes inside the api folder and handle the requests for you.
 
   if (isLoading) {
